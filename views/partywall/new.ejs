@@ -1,3 +1,4 @@
+<%- include("../partials/header") %>
 <h1>Add new order</h1>
 
 <form action="/partywall" method="POST">
@@ -20,17 +21,17 @@
           <li><input type="number" id="weight" name="weight" min="0" step="0.1" placeholder="Weight(Kg)"></li>
           <li><input type="number" id="price" name="price" min="0" step="0.1" placeholder="Price($)"></li>
           <li><input type="number" id="quantity" name="quantity" min="0" step="1" placeholder="Quantity"></li>
-          <li><input type="text" id="Category" name="category" value="Food" readonly></li>
+          <li><input type="text" id="Category" name="category" placeholder="Food"></li>
           <button>Submit</button> 
         </ul>
     </div>
     <div id="ifDrink" style="visibility: hidden;">
         <ul>
             <li><input type="text" id="Name" name="name" placeholder="Name..."></li>
-            <li><input type="number" id="volume" name="weight" min="0" step="0.1" placeholder="Volume(Litre)"></li>
+            <li><input type="number" id="volume" name="volume" min="0" step="0.1" placeholder="Volume(Litre)"></li>
             <li><input type="number" id="price" name="price" min="0" step="0.1" placeholder="Price($)"></li>
             <li><input type="number" id="quantity" name="quantity" min="0" step="1" placeholder="Quantity"></li>
-            <li><input type="text" id="category" name="category" value="Drink" readonly></li>
+            <li><input type="text" id="Category" name="category" placeholder="Drink"></li>
             <button>Submit</button> 
         </ul>
     </div>

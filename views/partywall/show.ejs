@@ -1,0 +1,22 @@
+<%- include("../partials/header") %>
+
+<div>
+    <ul class="list-group">
+            <li class="list-group-item">
+                <h4><%= order.name %> </h4>
+                <p><%= order.description %></p>
+                <p>Weight: <%= order.weight %> <% if (order.category === "Food") { %>
+                    /Kg
+                <% } else{ %>
+                    /Litre
+                <% } %></p>
+                <p>Price: $ <%= order.price%></p>
+                <p>Quantity: <%= order.quantity %></p>
+            </li>
+    </ul>
+</div>
+<div>
+    <form id="delete-form" action="/partywall/<%= order._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger">Delete</button>
+    </form>
+</div>

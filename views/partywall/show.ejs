@@ -1,5 +1,4 @@
 <%- include("../partials/header") %>
-
 <div>
     <ul class="list-group">
             <li class="list-group-item">
@@ -13,6 +12,7 @@
                 <p>Price: $ <%= order.price%></p>
                 <p>Quantity: <%= order.quantity %></p>
             </li>
+            <em>Posted by: <%= order.author.username %></em>
     </ul>
 </div>
 <div>

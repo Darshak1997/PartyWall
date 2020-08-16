@@ -1,0 +1,38 @@
+<h1>Add new order</h1>
+
+<form action="/partywall" method="POST">
+    Food: <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="foodCheck">
+    Drink: <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="drinkCheck">
+    <script> function yesnoCheck() { 
+        if (document.getElementById('foodCheck').checked) {
+          document.getElementById('ifFood').style.visibility = 'visible'; 
+          document.getElementById('ifDrink').style.visibility = 'hidden';
+        } 
+        else{
+          document.getElementById('ifFood').style.visibility = 'hidden'; 
+          document.getElementById('ifDrink').style.visibility = 'visible'; 
+        }  
+    } </script>
+    <div id = "ifFood" style="visibility:hidden">
+        <ul>
+          <li><input type="text" id="Name" name="name" placeholder="Name..."></li>
+          <li><textarea rows="4" cols="50" id="desc" name="desc" placeholder="Description..."></textarea></li>
+          <li><input type="number" id="weight" name="weight" min="0" step="0.1" placeholder="Weight(Kg)"></li>
+          <li><input type="number" id="price" name="price" min="0" step="0.1" placeholder="Price($)"></li>
+          <li><input type="number" id="quantity" name="quantity" min="0" step="1" placeholder="Quantity"></li>
+          <li><input type="text" id="Category" name="category" value="Food" readonly></li>
+          <button>Submit</button> 
+        </ul>
+    </div>
+    <div id="ifDrink" style="visibility: hidden;">
+        <ul>
+            <li><input type="text" id="Name" name="name" placeholder="Name..."></li>
+            <li><input type="number" id="volume" name="weight" min="0" step="0.1" placeholder="Volume(Litre)"></li>
+            <li><input type="number" id="price" name="price" min="0" step="0.1" placeholder="Price($)"></li>
+            <li><input type="quantity" id="quantity" name="quantity" min="0" step="1" placeholder="Quantity"></li>
+            <li><input type="text" id="category" name="category" value="Drink" readonly></li>
+            <button>Submit</button> 
+        </ul>
+    </div>
+
+</form>

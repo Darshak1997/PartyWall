@@ -1,8 +1,8 @@
 var express = require("express"),
     app     = express();
 
+app.set("view engine", "ejs");
 
-    
 // Index Route
 app.get("/partywall", function(req, res){
     res.send("Index Page!");
@@ -15,7 +15,7 @@ app.post("/partywall", function(req, res){
 
 // New Post Route
 app.get("/partywall/new", function(req, res){
-    res.send("New Route");
+    res.render("partywall/new");
 });
 
 app.listen("3000", function(){

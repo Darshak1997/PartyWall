@@ -1,20 +1,23 @@
 <%- include("../partials/header") %>
-<h1>Welcome to PartyWall</h1>
-<p>Add new order: <a href="/partywall/new">Add order</a></p>
 
-<ul class="list-group">
-    <% orders.forEach(order => { %>
-        <li class="list-group-item">
-            <h4><%= order.name %></h4>
-            <p><%= order.description %></p>
-            <p>Weight: <%= order.weight %> <% if (order.category === "Food") { %>
-                /Kg
-            <% } else{ %>
-                /Litre
-            <% } %></p>
-            <p>Price: $ <%= order.price%></p>
-            <p>Quantity: <%= order.quantity %></p>
-            <a href="/partywall/<%= order._id %>" class="btn btn-primary">More Info</a>
-        </li>
-    <% }); %>
-</ul>
+
+<div class="container">
+    <h1>Welcome to PartyWall</h1>
+    <p>Add new order: <a href="/partywall/new">Add order</a></p>
+    <ul class="list-group">
+        <% orders.forEach(order => { %>
+            <li class="list-group-item">
+                <h4><strong><%= order.name %></strong></h4>
+                <p><%= order.description %></p>
+                <p><strong>Weight: </strong><%= order.weight %> <% if (order.category === "Food") { %>
+                    /Kg
+                <% } else{ %>
+                    /Litre
+                <% } %></p>
+                <p><strong>Price:</strong> $ <%= order.price%></p>
+                <p><strong>Quantity:</strong> <%= order.quantity %></p>
+                <a href="/partywall/<%= order._id %>" class="btn btn-primary">More Info</a>
+            </li>
+        <% }); %>
+    </ul>
+</div>

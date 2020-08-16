@@ -1,22 +1,25 @@
 <%- include("../partials/header") %>
-<div>
-    <ul class="list-group">
-            <li class="list-group-item">
-                <h4><%= order.name %> </h4>
+<div class="container">
+    <div class="row"></div>
+        <div class="col-md-9">
+            <div class="caption-full">
+                <h4><strong><%= order.name %></strong> </h4> <span class="btn btn-primary btn-sm"><%= order.category %></span>
                 <p><%= order.description %></p>
-                <p>Weight: <%= order.weight %> <% if (order.category === "Food") { %>
+                <p><strong>Weight: </strong><%= order.weight %> <% if (order.category === "Food") { %>
                     /Kg
                 <% } else{ %>
                     /Litre
                 <% } %></p>
-                <p>Price: $ <%= order.price%></p>
-                <p>Quantity: <%= order.quantity %></p>
+                <p><strong>Price: </strong> $ <%= order.price%></p>
+                <p><strong>Quantity:</strong> <%= order.quantity %></p>
             </li>
             <em>Posted by: <%= order.author.username %></em>
-    </ul>
-</div>
-<div>
-    <form id="delete-form" action="/partywall/<%= order._id %>?_method=DELETE" method="POST">
-        <button class="btn btn-danger">Delete</button>
-    </form>
+            <div>
+                <form id="delete-form" action="/partywall/<%= order._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
 </div>

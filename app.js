@@ -8,9 +8,12 @@ var express = require("express"),
     PartyWall = require("./models/partywall"),
     User      = require("./models/user")
 
+
+// Routes 
 var partywallRoutes = require("./routes/partywall"),
     indexRoutes    = require("./routes/index");
 
+// Connect Mongoose
 mongoose.connect("mongodb://localhost/partywall", {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -36,7 +39,7 @@ app.use(function(req, res, next){
 app.use(partywallRoutes);
 app.use(indexRoutes);
 
-
+// Listening on port 3000
 app.listen("3000", function(){
     console.log("Application Started....")
 });
